@@ -8,8 +8,15 @@ public class ConfigUtils {
 
     public static Properties readProperties(){
         Properties properties = null;
+        InputStream inputStream;
+
         try {
-            InputStream inputStream = new FileInputStream("src/test/resources/env/production.properties");
+            String env = System.getProperty("env", "PRODUCTION");
+            switch (env){
+                case "PRODUCTION"-> inputStream = new FileInputStream("src/test/resources/env/production.properties");
+                case "LOCAL"-> inputStream = new FileInputStream("src/test/resources/env/local.properties");
+                default -> throw new RuntimeException("Property is not supported!");
+            }
             properties = new Properties();
             properties.load(inputStream);
         }catch (Exception error){
