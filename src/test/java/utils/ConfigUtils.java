@@ -36,8 +36,8 @@ public class ConfigUtils {
         return properties;
     }
 
-    public Object getBaseURL(){
-        return readProperties().get("URL");
+    public String getBaseURL(){
+        return readProperties().get("URL").toString();
     }
 
 }
