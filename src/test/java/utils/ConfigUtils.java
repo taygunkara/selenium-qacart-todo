@@ -6,6 +6,16 @@ import java.util.Properties;
 
 public class ConfigUtils {
 
+    private static ConfigUtils configUtils;
+    private ConfigUtils(){};
+
+    public static ConfigUtils getInstance(){
+        if (configUtils == null){
+            configUtils = new ConfigUtils();
+        }
+        return configUtils;
+    }
+
     public static Properties readProperties(){
         Properties properties = null;
         InputStream inputStream;
