@@ -35,7 +35,7 @@ public class RegisterPage {
         driver.findElement(signUpButton).click();
     }
 
-    public void load(WebDriver driver){
+    public void loadRegisterPage(WebDriver driver){
         driver.get(ConfigUtils.getInstance().getBaseURL() + "/signup");
     }
 }

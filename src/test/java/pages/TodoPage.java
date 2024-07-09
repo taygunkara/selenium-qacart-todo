@@ -6,7 +6,7 @@ import utils.ConfigUtils;
 
 public class TodoPage {
 
-    private final static By plusIcon = By.className("[data-testid=\"add\"]");
+    private final static By plusIcon = By.cssSelector("[data-testid=\"add\"]");
 
 
     private static TodoPage todoPage;
