@@ -1,5 +1,7 @@
 package models;
 
+import com.github.javafaker.Faker;
+
 public class User {
 
     private String firstName;
@@ -8,11 +10,11 @@ public class User {
     private String password;
 
     public User() {
-
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.password = password;
+        Faker faker = new Faker();
+        this.firstName = faker.name().firstName();
+        this.lastName = faker.name().lastName();
+        this.email = faker.internet().safeEmailAddress();
+        this.password = "Test12345*";
     }
 
     public String getFirstName() {
