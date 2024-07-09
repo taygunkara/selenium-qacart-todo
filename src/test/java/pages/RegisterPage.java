@@ -14,7 +14,15 @@ public class RegisterPage {
     private final static By signUpButton = By.cssSelector("[data-testid=\"submit\"]");
 
     // SINGLETON
+    private static RegisterPage registerPage;
+    private RegisterPage(){};
 
+    public static RegisterPage getInstance(){
+        if (registerPage == null){
+            registerPage = new RegisterPage();
+        }
+        return registerPage;
+    }
 
     // METHODS
 
