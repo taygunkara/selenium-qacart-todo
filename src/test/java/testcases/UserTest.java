@@ -1,4 +1,7 @@
 package testcases;
 
-public class UserTest {
+import base.BaseTest;
+
+public class UserTest extends BaseTest {
+
 }
