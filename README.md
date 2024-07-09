@@ -8,3 +8,7 @@ https://todo.qacart.com/
 - Selenium Java
 - TestNG
 - WebDriverManager
+
+`mvn test -Dbrowser=CHROME`
+
+`mvn test -Dbrowser=FIREFOX`
