@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import utils.ConfigUtils;
@@ -22,26 +23,32 @@ public class TodoPage {
         return todoPage;
     }
 
+    @Step("Visiting the to do page")
     public void loadTodoPage(WebDriver driver){
         driver.get(ConfigUtils.getInstance().getBaseURL() + "/todo");
     }
 
-    public void clickPlusIcon(WebDriver driver){
+    @Step("Click on the plus method")
+    public void clickOnPlusIcon(WebDriver driver){
         driver.findElement(plusIcon).click();
     }
 
-    public void clickDeleteIcon(WebDriver driver){
+    @Step("Click on the delete icon")
+    public void clickOnDeleteIcon(WebDriver driver){
         driver.findElement(deleteIcon).click();
     }
 
+    @Step("Check if welcome message displayed")
     public boolean isWelcomeDisplayed(WebDriver driver){
         return driver.findElement(welcomeDisplay).isDisplayed();
     }
 
+    @Step("Get the text of to do")
     public boolean isTodoDisplayed(WebDriver driver){
         return driver.findElement(todoDisplay).isDisplayed();
     }
 
+    @Step("Check if no to do message is displayed")
     public boolean isNoTodosDisplayed(WebDriver driver){
         return driver.findElement(noTodosDisplay).isDisplayed();
     }

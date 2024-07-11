@@ -1,6 +1,7 @@
 package pages;
 
 import apis.UserApi;
+import io.qameta.allure.Step;
 import io.restassured.response.Response;
 import models.User;
 import org.openqa.selenium.By;
@@ -20,7 +21,7 @@ public class RegisterPage {
 
 
     private static RegisterPage registerPage;
-    private RegisterPage(){};
+    private RegisterPage(){}
 
     public static RegisterPage getInstance(){
         if (registerPage == null){
@@ -29,6 +30,12 @@ public class RegisterPage {
         return registerPage;
     }
 
+    @Step("Visit the sign up page")
+    public void loadRegisterPage(WebDriver driver){
+        driver.get(ConfigUtils.getInstance().getBaseURL() + "/signup");
+    }
+
+    @Step("Register using the UI")
     public void register(WebDriver driver, User user){
         driver.findElement(firstnameInput).sendKeys(user.getFirstName());
         driver.findElement(lastnameInput).sendKeys(user.getLastName());
@@ -38,10 +45,7 @@ public class RegisterPage {
         driver.findElement(signUpButton).click();
     }
 
-    public void loadRegisterPage(WebDriver driver){
-        driver.get(ConfigUtils.getInstance().getBaseURL() + "/signup");
-    }
-
+    @Step("Register using API")
     public void registerUsingApi(WebDriver driver, User user){
 
         Response response = UserApi.getInstance().register(user);
