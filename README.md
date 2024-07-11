@@ -4,7 +4,7 @@
 
 ## Introduction 
 
-Welcome to the README for the Test Automation project focusing on the [Todo Qacart](https://todo.qacart.com/) website.rstanding the project's structure and purpose.
+Welcome to the README for the Test Automation project focusing on the [Todo Qacart](https://todo.qacart.com/) website.
 
 
 ## Technologies Used
@@ -15,11 +15,11 @@ Welcome to the README for the Test Automation project focusing on the [Todo Qaca
 
 
 ## Maven Libraries Used
-- Selenium Java
-- TestNG
-- WebDriverManager
-- Rest Assured
-- Maven Surefire
+- [Selenium Java](https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java)
+- [TestNG](https://mvnrepository.com/artifact/org.testng/testng)
+- [WebDriverManager](https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager)
+- [Rest Assured](https://mvnrepository.com/artifact/io.rest-assured/rest-assured)
+- [Maven Surefire](https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin)
 
 ## Project Structure
 
@@ -82,6 +82,11 @@ mvn clean test -Dbrowser=CHROME
 
 ```
 mvn clean test -Denv=PRODUCTION
+```
+
+- _To view the Allure report in your browser:_
+```
+allure serve allure-results
 ```
 
 ## Contact
