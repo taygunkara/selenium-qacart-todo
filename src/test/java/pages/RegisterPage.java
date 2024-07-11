@@ -54,6 +54,8 @@ public class RegisterPage {
         Cookie userIDCookie = new Cookie("userID", userID);
         Cookie firstNameCookie = new Cookie("firstName", firstName);
 
+        user.setAccessToken(access_token);
+
         driver.manage().addCookie(accessTokenCookie);
         driver.manage().addCookie(userIDCookie);
         driver.manage().addCookie(firstNameCookie);

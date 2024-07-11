@@ -1,5 +1,6 @@
 package models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.github.javafaker.Faker;
 
 public class User {
@@ -8,6 +9,8 @@ public class User {
     private String lastName;
     private String email;
     private String password;
+    @JsonIgnore
+    private String accessToken;
 
     public User() {
         Faker faker = new Faker();
@@ -15,6 +18,14 @@ public class User {
         this.lastName = faker.name().lastName();
         this.email = faker.internet().safeEmailAddress();
         this.password = "Test12345*";
+    }
+
+    public String getAccessToken() {
+        return accessToken;
+    }
+
+    public void setAccessToken(String accessToken) {
+        this.accessToken = accessToken;
     }
 
     public String getFirstName() {
