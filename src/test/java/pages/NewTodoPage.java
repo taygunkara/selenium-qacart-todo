@@ -1,5 +1,7 @@
 package pages;
 
+import apis.TodoApi;
+import models.User;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -21,6 +23,10 @@ public class NewTodoPage {
     public void createNewTodoItem(WebDriver driver){
         driver.findElement(todoItemInput).sendKeys("Be Happy!");
         driver.findElement(createTodoButton).click();
+    }
+
+    public void addTodoUsingApi(User user, String item){
+        TodoApi.getInstance().addTodo(user, item);
     }
 
 }
