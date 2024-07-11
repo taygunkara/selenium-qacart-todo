@@ -12,9 +12,9 @@ public class UserTest extends BaseTest {
     @Test(description = "Should be able to register to application")
     public void shouldBeAbleToRegisterToApplication(){
         User user = new User();
-        RegisterPage.getInstance().loadRegisterPage(driver);
-        RegisterPage.getInstance().register(driver, user);
-        Assert.assertTrue(TodoPage.getInstance().isWelcomeDisplayed(driver));
+        RegisterPage.getInstance().loadRegisterPage(driver.get());
+        RegisterPage.getInstance().register(driver.get(), user);
+        Assert.assertTrue(TodoPage.getInstance().isWelcomeDisplayed(driver.get()));
     }
 
 }
