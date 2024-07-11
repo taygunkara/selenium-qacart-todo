@@ -1,7 +1,10 @@
 package pages;
 
+import apis.UserApi;
+import io.restassured.response.Response;
 import models.User;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import utils.ConfigUtils;
 
@@ -38,4 +41,23 @@ public class RegisterPage {
     public void loadRegisterPage(WebDriver driver){
         driver.get(ConfigUtils.getInstance().getBaseURL() + "/signup");
     }
+
+    public void registerUsingApi(WebDriver driver, User user){
+
+        Response response = UserApi.getInstance().register(user);
+
+        String access_token = response.path("access_token");
+        String userID = response.path("userID");
+        String firstName = response.path("firstName");
+
+        Cookie accessTokenCookie = new Cookie("access_token", access_token);
+        Cookie userIDCookie = new Cookie("userID", userID);
+        Cookie firstNameCookie = new Cookie("firstName", firstName);
+
+        driver.manage().addCookie(accessTokenCookie);
+        driver.manage().addCookie(userIDCookie);
+        driver.manage().addCookie(firstNameCookie);
+        RegisterPage.getInstance().loadRegisterPage(driver);
+    }
+
 }
