@@ -8,6 +8,7 @@ https://todo.qacart.com/
 - Selenium Java
 - TestNG
 - WebDriverManager
+- Rest Assured
 
 `mvn test -Dbrowser=CHROME`
 
