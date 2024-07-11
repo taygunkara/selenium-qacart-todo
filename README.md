@@ -9,6 +9,7 @@ https://todo.qacart.com/
 - TestNG
 - WebDriverManager
 - Rest Assured
+- Maven Surefire
 
 `mvn test -Dbrowser=CHROME`
 
