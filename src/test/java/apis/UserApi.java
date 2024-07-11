@@ -1,5 +1,6 @@
 package apis;
 
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import models.User;
 import utils.ConfigUtils;
@@ -20,6 +21,7 @@ public class UserApi {
     public Response register(User user){
         return given()
                 .baseUri(ConfigUtils.getInstance().getBaseURL())
+                .contentType(ContentType.JSON)
                 .body(user)
         .when()
                 .post("/api/v1/users/register")
