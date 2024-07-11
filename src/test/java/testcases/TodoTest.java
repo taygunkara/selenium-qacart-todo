@@ -12,13 +12,12 @@ public class TodoTest extends BaseTest {
 
 
     @Test(description = "Should be able to add a new todo task")
-    public void shouldBeAbleToAddATodo(){
+    public void shouldBeAbleToAddANewTodo(){
         User user = new User();
         RegisterPage.getInstance().loadRegisterPage(driver.get());
-        RegisterPage.getInstance().register(driver.get(), user);
-        TodoPage.getInstance().loadTodoPage(driver.get());
+        RegisterPage.getInstance().registerUsingApi(driver.get(), user);
         TodoPage.getInstance().clickPlusIcon(driver.get());
-        NewTodoPage.getInstance().createNewTodoItem(driver.get());
+        NewTodoPage.getInstance().createNewTodo(driver.get());
         Assert.assertTrue(TodoPage.getInstance().isTodoDisplayed(driver.get()));
     }
 
@@ -27,10 +26,8 @@ public class TodoTest extends BaseTest {
     public void shouldBeAbleToDeleteATodo(){
         User user = new User();
         RegisterPage.getInstance().loadRegisterPage(driver.get());
-        RegisterPage.getInstance().register(driver.get(), user);
-        TodoPage.getInstance().loadTodoPage(driver.get());
-        TodoPage.getInstance().clickPlusIcon(driver.get());
-        NewTodoPage.getInstance().createNewTodoItem(driver.get());
+        RegisterPage.getInstance().registerUsingApi(driver.get(), user);
+        NewTodoPage.getInstance().createNewTodoUsingApi(driver.get(), user, "Be Happy!");
         TodoPage.getInstance().clickDeleteIcon(driver.get());
         Assert.assertTrue(TodoPage.getInstance().isNoTodosDisplayed(driver.get()));
     }

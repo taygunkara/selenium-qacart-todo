@@ -20,13 +20,14 @@ public class NewTodoPage {
         return newTodoPage;
     }
 
-    public void createNewTodoItem(WebDriver driver){
+    public void createNewTodo(WebDriver driver){
         driver.findElement(todoItemInput).sendKeys("Be Happy!");
         driver.findElement(createTodoButton).click();
     }
 
-    public void addTodoUsingApi(User user, String item){
+    public void createNewTodoUsingApi(WebDriver driver, User user, String item){
         TodoApi.getInstance().addTodo(user, item);
+        TodoPage.getInstance().loadTodoPage(driver);
     }
 
 }
