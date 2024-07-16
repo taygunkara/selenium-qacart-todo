@@ -24,8 +24,6 @@ public class DriverFactory {
             }
             default -> throw new RuntimeException("Browser is not supported!");
         }
-
-        driver.get("https://todo.qacart.com/");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         return driver;
