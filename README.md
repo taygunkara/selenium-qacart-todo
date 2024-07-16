@@ -4,8 +4,11 @@
 
 ## Introduction 
 
-Welcome to the README for the Test Automation project focusing on the [Todo Qacart](https://todo.qacart.com/) website.
+Welcome to the README for the Test Automation project focusing on the [Todo Qacart](https://todo.qacart.com/) website. This project is designed to perform test automation for a Todo application. The project is developed using the Java programming language and configured with Maven.
 
+- The project includes both UI and API tests.
+- Page Object Model (POM) design pattern is used.
+- Tests can be configured for different environments (local and production).
 
 ## Technologies Used
 <a href="https://rest-assured.io/"><img src="https://avatars.githubusercontent.com/u/19369327?s=280&v=4" width="40" alt="Rest Assured"/></a>
@@ -23,6 +26,16 @@ Welcome to the README for the Test Automation project focusing on the [Todo Qaca
 
 ## Project Structure
 
+The project consists of the following main components:
+
+`apis:` Classes used for API calls   
+`base:` Base test class  
+`factory:` Factory class for creating WebDriver   
+`models:` Data models   
+`pages:` Page Object Model classes  
+`testcases:` Test scenarios   
+`utils:` Utility classes   
+`resources:` Configuration files
 ```
 .
 ├── pom.xml
