@@ -9,6 +9,8 @@ Welcome to the Selenium Qacart Todo project! This project is designed to perform
 
 ## Table of Contents
 - [Introduction](#introduction)
+- [Key Features](#key-features)
+- [Future Enhancements](#future-enhancements)
 - [Technologies Used](#technologies-used)
 - [Maven Libraries Used](#maven-libraries-used)
 - [Project Structure](#project-structure)
@@ -19,12 +21,23 @@ Welcome to the Selenium Qacart Todo project! This project is designed to perform
 
 ## Introduction
 
-This project focuses on automating the testing of a Todo application developed using Java and configured with Maven. The tests can be configured for different environments (local and production).
+This project automates the testing of a Todo application, configured with Maven for dependency management and TestNG for test execution. A key aspect of this framework is its hybrid nature; it uses API calls to set up test prerequisites (like creating a user), which makes UI tests faster and more reliable by focusing them on their specific target functionality.
 
-### Key Features
-- UI and API tests for the Todo application
-- Page Object Model (POM) design pattern
-- Environment configurations for local and production setups
+## Key Features
+- **Hybrid Testing:** Combines UI and API tests for efficient and stable test execution.
+- **Page Object Model (POM):** Organizes UI interactions into page-specific classes for better reusability and maintenance.
+- **Environment Configuration:** Supports running tests against different environments (e.g., local, production) through simple configuration files.
+- **Cross-Browser Testing:** Easily configurable to run tests on different web browsers.
+- **Detailed Reporting:** Generates comprehensive and interactive test reports using Allure.
+
+## Future Enhancements
+This project is under continuous development. The following improvements are planned to increase its robustness, scalability, and maintainability:
+
+- **Refactor Driver Management:** Transition from the current Singleton Pattern for WebDriver management to a `BasePage` structure. This will improve thread safety and provide better control over the driver instance during parallel test execution.
+- **Introduce a WaitUtils Class:** Abstract explicit waits into a dedicated `WaitUtils` utility class. This will centralize wait logic, reduce code duplication in page classes, and create convenient shortcut methods using method overloading.
+- **Implement Robust Error Handling:** Integrate `try-catch` blocks within all major methods (page methods, utilities, driver management) to handle potential exceptions gracefully and prevent abrupt test failures.
+- **Integrate SLF4J for Logging:** Add `SLF4J` for structured logging. By implementing `log.info()`, `log.debug()`, and `log.error()`, debugging will become more efficient, providing clear insights into the test execution flow and pinpointing the exact location of failures.
+- **Develop an API Test Architecture:** Refactor API interactions into a more structured pattern similar to POM. This will involve creating `ApiHelper` and `ResponseBuilder` classes to encapsulate request/response logic, making API calls in test cases cleaner and more parameter-driven.
 
 ## Technologies Used
 
