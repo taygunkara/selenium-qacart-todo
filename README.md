@@ -7,6 +7,8 @@
 
 Welcome to the Selenium Qacart Todo project! This project is designed to perform test automation for the [Todo Qacart](https://todo.qacart.com/) website using Selenium and TestNG. It includes both UI and API tests and follows the Page Object Model (POM) design pattern.
 
+[Project Article](https://taygunkara.github.io/pages/projects/selenium-qacart-todo-projesi.html)
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Key Features](#key-features)
